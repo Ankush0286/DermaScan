@@ -8,7 +8,7 @@ import os
 import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras import layers, regularizers
-from gradcam import grad_CAM  # Ensure gradcamshow is correctly imported
+from gradcam import grad_CAM
 
 app = Flask(__name__)
 
@@ -128,7 +128,7 @@ def get_remedy():
         # Initialize the Groq API client
         client = Groq(api_key="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")
         completion = client.chat.completions.create(
-            model="llama3-8b-8192",  # Check if the model is available
+            model="llama3-8b-8192",
             messages=[  
                 {
                     "role": "user",
