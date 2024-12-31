@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'montserrat';
+    box-sizing: border-box;
+}
+html{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth !important;
+}
+
+.n1{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    
+}
+.nav{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow:  rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: fixed;
+    z-index: 99;
+    background-color: white;
+}
+.nav a{
+    text-decoration: none;
+    color: black;
+}
+.n1 img{
+    height: 80px;
+    width: 80px;
+}
+.n2{
+    display: flex;
+    gap: 25px;
+}
+.nav-main{
+    display: flex;
+    gap: 50px;
+}
+#myVideo{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed; /* Change to fixed for consistency */
+    z-index: -1; /* Ensure video stays behind other content */
+}
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#page1{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1; /* Set z-index to a higher value */
+}
+
+#page1 h1{
+    font-size: 60px;
+    text-align: center;
+    margin-top: -250px;
+    font-weight: 700;
+    text-align: center;
+}
+#page1 span{
+    color: rgb(27, 51, 204);
+}
+#page1 h4{
+    color: rgb(56, 57, 57);
+    font-size: 1.1rem;
+    padding-top: 70px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.Nxt-Page {
+    background-color: #0662c5;
+    color: rgb(245, 240, 240);
+    position: absolute;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition:  0.3s ease;
+    bottom: 120px;
+    font-weight: 600;
+    font-size: 20px;
+
+
+}
+.Nxt-Page:hover{
+    background-color: #0056b3;
+    box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+
+}
+
+#nextPageButton:hover {
+    background-color: #0056b3;
+}
+#predictionSection{
+    height: 250vh;
+}
+
+#predictionSection label{
+    font-size: 50px;
+}
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+}
+#image {
+    padding: 5px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    /* Style for the predict button */
+ button[type="submit"] {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+}
+
+    /* Hover effect for the button */
+button[type="submit"]:hover {
+        background-color: #0056b3;
+}
+#image {
+    padding: 10px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 300px;
+}
+
+#imagePreview {
+    text-align: center;
+}
+
+#previewImg {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    display: none;
+}
+#go-to-top{
+    position: fixed;
+    bottom: 20px;
+    background-color:rgb(59, 59, 227) ;
+    color: white;
+    opacity: 0.5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 2px 4px rgba(0,0,0,0.3);
+    transition: all 0.2s linear ;
+    left: 20px;
+}
+#go-to-top:hover{
+    opacity: 1;
+}
+#getRemedy {
+    background-color: #0a56b2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px auto;
+    display: block; /* Center horizontally */
+}
+
+#getRemedy:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+#getRemedy:active {
+    background-color: #003f8a;
+}
+/* Style for the image preview container */
+#previewImg {
+    display: none; /* Hidden by default until an image is selected */
+    margin: 20px auto; /* Centered below the file input */
+    width: 350px; /* Image width */
+    height: 350px; /* Image height */
+    border: 2px dotted grey; /* Dotted grey border */
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    padding: 5px; /* Add padding to create space inside the box */
+    background-color: #f9f9f9; /* Light grey background for the box */
+    object-fit: cover; /* Ensures the image fits within the box without distortion */
+}
+
+#remedyResult table {
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    width: 80%;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 18px;
+}
+
+#remedyResult th, #remedyResult td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+#remedyResult th {
+    background-color: #007BFF;
+    color: white;
+    font-size: 20px;
+}
+
+#remedyResult tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#remedyResult tr:hover {
+    background-color: #e9f5ff;
+}
+
+#remedyResult td {
+    color: #333;
+}
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.card {
+    flex: 1 1 300px;
+    max-width: 400px;
+    background-color: rgb(249,248,254);
+
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    max-width: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+.disease h1{
+    text-align: center;
+    padding-bottom: 70px;
+}
+#predictionSection {
+    text-align: center;
+    padding-top: 100px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+#predictionSection h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#uploadForm {
+    margin: 30px auto;
+    display: inline-block;
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#uploadForm label {
+    font-size: 1.2em;
+    color: #555;
+}
+
+#uploadForm input[type="file"] {
+    margin: 15px 0;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    display: block;
+}
+
+#uploadForm button {
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#uploadForm button:hover {
+    background-color: #0056b3;
+}
+.disease{
+    padding-top:590px;
+}

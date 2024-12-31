@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav">
+        <div class="n1">
+            <img src="{{ url_for('static', filename='image.png') }}" alt="Logo">
+            <h2>DermaScan</h2>
+        </div>
+        <div class="nav-main">
+            <a href="#home"><h4>Home</h4></a>
+            <a href="#predictionSection"><h4>Image Upload</h4></a>
+            <a href="#diseases"><h4>Diseases</h4></a>
+            <a href="#team"><h4>Our Team</h4></a>
+        </div>
+        <div class="n2">
+            <h4>FAQs</h4>
+            <h4>Contact Us</h4>
+        </div>
+    </div>
+    <h1>Scroll down</h1>
+    <button id="go-to-top">Go to top</button>
+
+    <!-- Video Background -->
+    <video id="myVideo" autoplay loop muted preload="auto" src="{{ url_for('static', filename='video.mp4') }}"></video>
+
+
+    <!-- Hero Section -->
+    <div id="main">
+        <div id="page1">
+            <h1>Revolutionize Your <br><span>Healthcare Experience</span></h1>
+            <h4>Empowering You with Advanced AI Technology to Predict and Address Skin Concerns Before They Become Serious.</h4>
+            <button class="Nxt-Page" onclick="navigateToNextPage()">Get Started</button>
+        </div>
+    </div>
+    
+    
+    
+    <!-- Skin Disease Prediction Section -->
+    <div id="predictionSection" style="text-align: center; padding-top: 150px;">
+        <h1>Skin Disease Prediction</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="image" style="font-size: 18px;">Upload an image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required style="margin: 10px 0;  ">
+            <button type="submit" style="padding: 10px 20px;">Predict</button>
+        </form>
+        <div id="gradCamResult" style="margin-top: 20px; display: none;">
+            <h3>Grad-CAM Visualization</h3>
+            <img id="gradCamImage" src="" alt="Grad-CAM result"  style=" height: 400px; width: 350px; border: 3px dashed #ff6550; border-style: dashed; "/>
+        </div>
+        <div id="result"  style="margin-top: 20px;"></div>
+        <button id="getRemedy" style="display: none; padding: 10px 20px;" onclick="getRemedy()">Get Remedy</button>
+        <div id="remedyResult" style="margin-top: 20px; display: none;"></div>
+    </div>
+
+     <!--DISEASES -->
+
+     <div class="disease">
+        <h1>Skin Diseases</h1>
+    <div class="item">
+        
+        <div class="card">
+            <img src="" alt="">
+            <h3>Acne</h3>
+            <p>Acne is a common skin condition caused by clogged hair follicles due to oil, dead skin cells, and bacteria. It often appears on the face, chest, and back, manifesting as pimples, blackheads, or cysts. While typically affecting teenagers, it can occur at any age. Effective treatments include proper skincare, topical medications, and, in severe cases, professional dermatological care.</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="acne.png" alt="">
+            <h3>Eczema</h3>
+            <p>Eczema is a chronic skin condition causing inflammation, redness, itching, and dryness. It often appears as patches on the hands, face, or behind knees. Triggered by allergens, irritants, stress, or weather changes, it can vary in severity. Though not contagious, eczema requires moisturizers, medications, and avoiding triggers for management. Common types include atopic dermatitis and contact dermatitis.</p>
+        </div>
+
+        <div class="card">
+            <img src="acne.png" alt="">
+            <h3>Melanoma</h3>
+            <p>Melanoma is a type of skin cancer that develops from pigment-producing cells called melanocytes. It often appears as a new mole or a change in an existing one, characterized by irregular shape, uneven color, and size. Melanoma can spread to other body parts if not treated early. Early detection and treatment are crucial for a better prognosis.</p>
+        </div>
+
+        <div class="card">
+            <img src="acne.png" alt="">
+            <h3>Psoriasis</h3>
+            <p>Psoriasis is a chronic autoimmune skin condition causing rapid skin cell buildup, leading to thick, scaly patches called plaques. These plaques are often red, itchy, and covered with silvery scales, typically appearing on the scalp, elbows, knees, or lower back. Triggers include stress, infections, and weather changes. Treatment involves topical creams, phototherapy, and medications to manage symptoms and reduce inflammation.</p>
+        </div>
+
+        <div class="card">
+            <img src="acne.png" alt="">
+            <h3>Seborrheic Keratoses</h3>
+            <p>Seborrheic keratoses are noncancerous skin growths that appear as brown, black, or tan spots with a waxy or wart-like texture. Common in older adults, they typically develop on the chest, back, face, or neck. The exact cause is unclear but may involve genetics and aging. Though harmless, they can be removed for cosmetic reasons or if irritated.</p>
+        </div>
+
+        <div class="card">
+            <img src="acne.png" alt="">
+            <h3>Tinea Ringworm Candidiasis</h3>
+            <p>Tinea (Ringworm) is a contagious fungal infection causing red, itchy, ring-shaped rashes on the skin or scalp. Candidiasis, caused by Candida fungi, affects moist areas like the mouth (thrush) or genitals, leading to itching, redness, and white patches. Both thrive in warm, damp environments. Treatments include antifungal creams, oral medications, and maintaining hygiene to prevent recurrence.</p>
+        </div>
+
+        <div class="card">
+            <img src="acne.png" alt="">
+            <h3>Warts Molluscum</h3>
+            <p>Warts are small, rough skin growths caused by the human papillomavirus (HPV), often appearing on hands, feet, or genitals. Molluscum contagiosum, caused by a poxvirus, results in smooth, dome-shaped, flesh-colored bumps. Both are contagious through direct contact or shared objects. While often harmless, they can be treated with topical solutions, cryotherapy, or minor procedures for removal.</p>
+        </div>
+        <!-- Repeat cards as needed -->
+
+    </div>
+    </div>
+
+
+
+
+    
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
