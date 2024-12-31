@@ -132,7 +132,7 @@ def get_remedy():
             messages=[  
                 {
                     "role": "user",
-                    "content": f"Suggest 5 scientifically backed home remedies for {prediction_result['class']} that can be safely used by patients."
+                    "content": f"Provide 5 scientifically backed home remedies for {prediction_result['class']} with no extra commentary."
                 },
                 {
                     "role": "assistant",
